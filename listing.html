@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premium Skincare Set | MyLogo</title>
+  <meta name="description" content="Discover our premium skincare set with scientifically-proven ingredients for all skin types">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/711/711769.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #111827;
+      --bg-card: #1e293b;
+      --border-color: #334155;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --text-light: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .navbar {
+      background: var(--primary) !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .image-banner {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                  url('https://img.freepik.com/premium-vector/modern-polygon-background_1035-11422.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 200px;
+    }
+    .product-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+    .product-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15);
+    }
+    .thumbnail-box {
+      width: 80px;
+      height: 80px;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .thumbnail-box:hover, .thumbnail-box.active {
+      border-color: var(--primary);
+      transform: translateY(-3px);
+    }
+    .thumbnail-box.active {
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+    }
+    .btn-primary {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      border-color: var(--primary-hover);
+    }
+    .text-primary {
+      color: var(--primary) !important;
+    }
+    .text-muted {
+      color: var(--text-muted) !important;
+    }
+    footer {
+      background: #0f172a;
+      margin-top: auto;
+    }
+    @media (max-width: 768px) {
+      .thumbnail-box {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">MyLogo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="https://example.com">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://example.com">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://example.com">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="image-banner d-flex align-items-center justify-content-center">
+    <div class="text-center text-white px-3">
+      <h1 class="fw-bold mb-3">Premium Skincare Collection</h1>
+      <p class="lead mb-0">Scientifically formulated for radiant skin</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Product Media -->
+        <div class="col-lg-6">
+          <div id="mediaDisplay" class="mb-3 ratio ratio-1x1 bg-dark rounded overflow-hidden">
+            <img src="https://welpix.com/wp-content/uploads/2024/06/A-guide-to-skincare-product-photography.webp" 
+                 class="img-fluid object-fit-cover" 
+                 alt="Premium Skincare Set" 
+                 id="mainMedia"
+                 loading="lazy">
+          </div>
+          
+          <div class="d-flex gap-3 overflow-auto py-2">
+            <div class="thumbnail-box rounded active" onclick="setMedia(0)">
+              <img src="https://welpix.com/wp-content/uploads/2024/06/A-guide-to-skincare-product-photography.webp" 
+                   class="h-100 w-100 object-fit-cover rounded" 
+                   alt="Product view 1"
+                   loading="lazy">
+            </div>
+            <div class="thumbnail-box rounded" onclick="setMedia(1)">
+              <img src="https://welpix.com/wp-content/uploads/2024/06/A-guide-to-skincare-product-photography.webp" 
+                   class="h-100 w-100 object-fit-cover rounded" 
+                   alt="Product view 2"
+                   loading="lazy">
+            </div>
+            <div class="thumbnail-box rounded" onclick="setMedia(2)">
+              <img src="https://welpix.com/wp-content/uploads/2024/06/A-guide-to-skincare-product-photography.webp" 
+                   class="h-100 w-100 object-fit-cover rounded" 
+                   alt="Product view 3"
+                   loading="lazy">
+            </div>
+            <div class="thumbnail-box rounded d-flex align-items-center justify-content-center bg-primary text-white fw-semibold" 
+                 onclick="setMedia(3)">
+              ▶ Video
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="col-lg-6">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="text-primary fw-bold mb-0">Premium Skincare Set</h2>
+            <div class="text-warning">
+
+              
+            </div>
+          </div>
+
+          <div class="product-card p-4 rounded mb-4">
+            <h5 class="d-flex align-items-center fw-semibold mb-3">
+              <i class="bi bi-info-circle-fill text-primary me-2"></i>
+              Product Details
+            </h5>
+            <p class="text-muted mb-0">
+              Our dermatologist-tested formula combines proven active ingredients with luxurious textures. 
+              Free from parabens, sulfates, and phthalates. Suitable for all skin types including sensitive skin.
+            </p>
+          </div>
+
+          <div class="product-card p-4 rounded mb-4">
+            <h5 class="d-flex align-items-center fw-semibold mb-3">
+              
+              Key Benefits
+            </h5>
+            <ul class="list-unstyled text-muted">
+              <li class="mb-2 d-flex align-items-start">
+                <i class="bi bi-check-circle-fill text-primary me-2 mt-1"></i>
+                <span>Clinically proven to reduce wrinkles by 30% in 4 weeks</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start">
+                <i class="bi bi-check-circle-fill text-primary me-2 mt-1"></i>
+                <span>Cruelty-free and vegan formula</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start">
+                <i class="bi bi-check-circle-fill text-primary me-2 mt-1"></i>
+                <span>Contains hyaluronic acid and vitamin C</span>
+              </li>
+              <li class="d-flex align-items-start">
+                <i class="bi bi-check-circle-fill text-primary me-2 mt-1"></i>
+                <span>12-month shelf life after opening</span>
+              </li>
+            </ul>
+          </div>
+
+          
+            
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h6 class="fw-semibold text-primary mb-3">Company</h6>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link text-muted p-0">About Us</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link text-muted p-0">Careers</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link text-muted p-0">Press</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-semibold text-primary mb-3">Resources</h6>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link text-muted p-0">Blog</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link text-muted p-0">Help Center</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link text-muted p-0">Tutorials</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-semibold text-primary mb-3">Connect</h6>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link text-muted p-0">Contact Us</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link text-muted p-0">Privacy Policy</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link text-muted p-0">Terms of Service</a></li>
+          </ul>
+          <div class="mt-3">
+            <a href="#" class="text-muted me-3"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-muted me-3"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-muted me-3"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-muted"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4 border-secondary">
+      <div class="text-center text-muted">
+        <small>© 2023 MyLogo. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const media = [
+      { type: 'image', src: 'https://welpix.com/wp-content/uploads/2024/06/A-guide-to-skincare-product-photography.webp' },
+      { type: 'image', src: 'https://welpix.com/wp-content/uploads/2024/06/A-guide-to-skincare-product-photography.webp' },
+      { type: 'image', src: 'https://welpix.com/wp-content/uploads/2024/06/A-guide-to-skincare-product-photography.webp' },
+      { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ' }
+    ];
+
+    function setMedia(index) {
+      const display = document.getElementById('mediaDisplay');
+      if (media[index].type === 'image') {
+        display.innerHTML = `
+          <img src="${media[index].src}" 
+               class="img-fluid object-fit-cover" 
+               alt="Premium Skincare Set" 
+               loading="lazy">`;
+      } else {
+        display.innerHTML = `
+          <iframe src="${media[index].src}" 
+                  class="w-100 h-100"
+                  frameborder="0" 
+                  allowfullscreen></iframe>`;
+      }
+      
+      // Update active thumbnail
+      document.querySelectorAll('.thumbnail-box').forEach((box, i) => {
+        box.classList.toggle('active', i === index);
+      });
+    }
+
+    // Initialize first media
+    document.addEventListener('DOMContentLoaded', setMedia(0));
+  </script>
+</body>
+</html>
